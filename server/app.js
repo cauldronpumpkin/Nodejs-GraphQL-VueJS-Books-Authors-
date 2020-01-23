@@ -8,7 +8,7 @@ const SECRET = "ilovewebdevelopment1201";
 const authen = require('./middleware/authen');
 const cors = require('cors');
 
-mongoose.connect('mongodb+srv://ishu:mymellon@cluster0-zpkjd.gcp.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://<user>:<password>@cluster0-zpkjd.gcp.mongodb.net/test?retryWrites=true&w=majority');
 mongoose.connection.once('open', () => {
     console.log("Connected Bictch");
 })
