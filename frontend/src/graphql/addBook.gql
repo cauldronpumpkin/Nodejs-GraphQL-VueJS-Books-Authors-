@@ -1,7 +1,0 @@
-mutation addBook($name: String!, $genre: String!, $authorName: String!) {
-    addBook (name: $name, genre: $genre, authorName: $authorName) {
-        name
-        genre
-        authorName
-    }
-}
