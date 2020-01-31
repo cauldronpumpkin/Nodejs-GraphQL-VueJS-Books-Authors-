@@ -8,21 +8,23 @@ const SECRET = "ilovewebdevelopment1201";
 const authen = require('./middleware/authen');
 const cors = require('cors');
 
-mongoose.connect('mongodb+srv://ishu:mymellon@cluster0-zpkjd.gcp.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://ishu:mymellon@tryinggraphql-nz9uu.mongodb.net/test?retryWrites=true&w=majority');
 mongoose.connection.once('open', () => {
     console.log("Connected Bictch");
 })
 
-app.use(authen);
 const corsOptions = {
     origin: 'http://127.0.0.1:8080'
 }
+app.use(cors(corsOptions));
+app.use(authen);
 
-app.use('/graphql', cors(corsOptions), graphqlHTTP(({
+
+app.use('/graphql', graphqlHTTP(({
     schema,
     graphiql: true,
 })));
 
-app.listen(4000, () => {
+app.listen(3000, () => {
     console.log("listensing to port 4000");
 })
